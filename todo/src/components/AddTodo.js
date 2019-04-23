@@ -22,7 +22,14 @@ class AddTodo extends React.Component {
     return (
       <form>
         <input name="add" placeholder="Add Todo..." value={this.state.todo} onChange={this.input}/>
-        <button onClick={ (e) => {e.preventDefault(); return this.props.addTodo(this.state.todo)} }>Add</button>
+        <button onClick={ (e) => { 
+            e.preventDefault();
+            this.props.addTodo(this.state.todo);
+            this.setState({
+                todo : ''
+            });
+            } 
+        }>Add</button>
       </form>
     )
   }
