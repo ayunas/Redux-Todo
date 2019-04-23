@@ -4,7 +4,7 @@ function Todos(props) {
     return (
         <ul>
             {/* {props.todos.map()} */}
-            <span>Todos</span>
+            {/* <span>Todos</span> */}
         </ul>
     )
 }

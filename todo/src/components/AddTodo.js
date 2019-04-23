@@ -1,12 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class AddTodo extends Component {
+class AddTodo extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            todo : ""
+        }
+    }
+
+    input = e => {
+        this.setState({
+            todo : e.target.value
+        })
+    }
+
+
   render() {
     return (
-      <div>
-        AddTodo
-      </div>
+      <form>
+        <input name="add" placeholder="Add Todo..." value={this.state.todo} onChange={this.input}/>
+        <button>Add</button>
+      </form>
     )
   }
 }
 
+export default AddTodo;
