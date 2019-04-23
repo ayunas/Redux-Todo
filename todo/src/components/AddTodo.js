@@ -1,4 +1,7 @@
 import React from 'react'
+import {addTodo} from '../actions';
+import {connect} from 'react-redux';
+
 
 class AddTodo extends React.Component {
     constructor(props) {
@@ -15,15 +18,14 @@ class AddTodo extends React.Component {
         })
     }
 
-
   render() {
     return (
       <form>
         <input name="add" placeholder="Add Todo..." value={this.state.todo} onChange={this.input}/>
-        <button>Add</button>
+        <button onClick={ (e) => {e.preventDefault(); return this.props.addTodo(this.state.todo)} }>Add</button>
       </form>
     )
   }
 }
 
-export default AddTodo;
+export default connect(null,{addTodo : addTodo})(AddTodo);

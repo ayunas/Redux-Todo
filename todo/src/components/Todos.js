@@ -1,4 +1,6 @@
 import React from 'react'
+import {connect} from 'react-redux';
+
 
 function Todos(props) {
     return (
@@ -9,4 +11,9 @@ function Todos(props) {
     )
 }
 
-export default Todos;
+function mapStateToProps(state) {
+    console.log("current state: ", state);
+    return {}
+}
+
+export default connect(mapStateToProps,{})(Todos);
