@@ -1,6 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import {deleteTodo, tag} from '../actions';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faExclamation} from '@fortawesome/free-solid-svg-icons';
+
 
 class Todos extends React.Component {
     // console.log('todos props: ', props.todos);
@@ -17,6 +20,7 @@ class Todos extends React.Component {
             <ul>
                 {this.props.todos.map( (todo, i) => 
                 <div className='todo'>
+                    <FontAwesomeIcon icon={faExclamation} />
                     <li key={i} onClick={ () => {this.setState({trigger : !this.state.trigger}); this.props.tag(todo, this.state.trigger)} }>{todo}</li>
                     <button id={i} onClick={ () => this.props.deleteTodo(todo,i)}>delete</button>
                 </div>

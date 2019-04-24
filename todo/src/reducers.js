@@ -22,6 +22,7 @@ function rootReducer(state = initialState, action) {
 
         case "TAG": 
             console.log('tag trigger value: ', action.payload.trigger);
+            
             return {
                 ...state,
                 trigger : !action.payload.trigger
