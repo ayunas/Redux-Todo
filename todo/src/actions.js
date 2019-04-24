@@ -17,13 +17,13 @@ export function deleteTodo(todo,i) {
     }   
 }
 
-export function tag(todo) {
+export function tag(todo, trigger) {
     console.log('tag has been triggered');
-
     return {
         type: "TAG",
         payload: {
-            trigger : true
+            trigger : trigger
         }
     }
 }
+
