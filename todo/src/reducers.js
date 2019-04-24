@@ -29,7 +29,7 @@ function rootReducer(state = initialState, action) {
         //     }
 
         case "STAR": 
-            console.log('the star action has arrived to the reducer. action.payload = ', action.payload);
+            console.log('star action dispatched to reducer. action.payload = ', action.payload);
             // action.payload.important = !action.payload.important;
             return {
                 ...state,
