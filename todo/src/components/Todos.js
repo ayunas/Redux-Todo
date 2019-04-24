@@ -24,10 +24,10 @@ function mapStateToProps(state) {
     }
 }
 
-// function mapDispatchToProps() {
-//     return {
-//         deleteTodo : () => deleteTodo()
-//     }
-// }
+function mapDispatchToProps() {
+    return {
+        deleteTodo : deleteTodo
+    }
+}
 
-export default connect(mapStateToProps, {deleteTodo : deleteTodo})(Todos);
+export default connect(mapStateToProps, mapDispatchToProps())(Todos);
