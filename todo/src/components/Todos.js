@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {deleteTodo, tag, star} from '../actions';
+import {deleteTodo, star} from '../actions';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import {faStar as faStarClear} from '@fortawesome/free-regular-svg-icons';
@@ -31,9 +31,8 @@ class Todos extends React.Component {
             <ul>
                 {this.props.todos.map( (todo, i) => 
                 <div className='todo'>
-                   
-                    <FontAwesomeIcon icon={faStar} onClick={ () => this.props.star(todo)}/>
-                    <FontAwesomeIcon icon={faStarClear} onClick={ () => this.props.star(todo)}/>
+                   {todo.important ? <FontAwesomeIcon icon={faStar} onClick={ () => this.props.star(todo)}/>
+                   : <FontAwesomeIcon icon={faStarClear} onClick={ () => this.props.star(todo)}/>}
                     <li>{todo.todo}</li>
                     <button id={i} onClick={ () => this.props.deleteTodo(todo.todo,i)}>delete</button>
                 </div>
@@ -53,7 +52,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps() {
     return {
         deleteTodo : deleteTodo,
-        tag : tag,
+        // tag : tag,
         star : star
     }
 }

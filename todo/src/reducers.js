@@ -20,13 +20,13 @@ function rootReducer(state = initialState, action) {
                 todos : state.todos.filter( (todo,i) => (i !== action.payload.index) )
             }
 
-        case "TAG": 
-            console.log('tag trigger value: ', action.payload.trigger);
+        // case "TAG": 
+        //     console.log('tag trigger value: ', action.payload.trigger);
 
-            return {
-                ...state,
-                trigger : !action.payload.trigger
-            }
+        //     return {
+        //         ...state,
+        //         trigger : !action.payload.trigger
+        //     }
 
         case "STAR": 
             console.log('the star action has arrived to the reducer. action.payload = ', action.payload);

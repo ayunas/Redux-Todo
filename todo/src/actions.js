@@ -20,15 +20,15 @@ export function deleteTodo(todo,i) {
     }   
 }
 
-export function tag(todo, trigger) {
-    console.log('tag has been triggered');
-    return {
-        type: "TAG",
-        payload: {
-            trigger : trigger
-        }
-    }
-}
+// export function tag(todo, trigger) {
+//     console.log('tag has been triggered');
+//     return {
+//         type: "TAG",
+//         payload: {
+//             trigger : trigger
+//         }
+//     }
+// }
 
 export function star(todo) {
     // console.log('star has been triggered');
