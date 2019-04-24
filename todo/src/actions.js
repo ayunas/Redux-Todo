@@ -1,3 +1,4 @@
+
 export function addTodo(todo,important) {
     // console.log('addTodo action maker has been triggered ', todo);
     return {
@@ -20,6 +21,19 @@ export function deleteTodo(todo,i) {
     }   
 }
 
+export function star(todo,i) {
+    console.log('star has been triggered in the star action creator');
+    // console.log('todo: ', todo);
+
+    return {
+        type: "STAR",
+        payload: {
+            todo : todo,
+            index : i
+        }
+    }
+}
+
 // export function tag(todo, trigger) {
 //     console.log('tag has been triggered');
 //     return {
@@ -30,12 +44,3 @@ export function deleteTodo(todo,i) {
 //     }
 // }
 
-export function star(todo) {
-    // console.log('star has been triggered');
-    // console.log('todo: ', todo);
-
-    return {
-        type: "STAR",
-        payload: todo
-    }
-}

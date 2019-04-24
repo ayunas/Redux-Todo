@@ -26,13 +26,13 @@ class Todos extends React.Component {
 
     render() {
         console.log(this.props.todos, "todos on props of <Todos>");
-
+        
         return (
             <ul>
                 {this.props.todos.map( (todo, i) => 
                 <div className='todo'>
                    {todo.important ? <FontAwesomeIcon icon={faStar} onClick={ () => this.props.star(todo)}/>
-                   : <FontAwesomeIcon icon={faStarClear} onClick={ () => this.props.star(todo)}/>}
+                   : <FontAwesomeIcon icon={faStarClear} onClick={ () => this.props.star(todo,i)}/>}
                     <li>{todo.todo}</li>
                     <button id={i} onClick={ () => this.props.deleteTodo(todo.todo,i)}>delete</button>
                 </div>

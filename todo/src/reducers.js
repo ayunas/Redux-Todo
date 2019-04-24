@@ -30,9 +30,25 @@ function rootReducer(state = initialState, action) {
 
         case "STAR": 
             console.log('the star action has arrived to the reducer. action.payload = ', action.payload);
-            action.payload.important = !action.payload.important;
+            // action.payload.important = !action.payload.important;
             return {
-                ...state
+                ...state,
+                todos : state.todos.map( (todo,i) => {
+                    if (action.payload.index === i) {
+                        return {...todo, important: !todo.important}
+                    } else {
+                        return todo
+                    }
+                })
+
+                // todos : state.todos.map( (todo) => {
+                //     if (action.payload.todo === todo) {
+                //         return {
+                //             ...todo,
+                //             important : !action.payload.important
+                //         }
+                //     }
+                // } )
             }
 
         default: 
