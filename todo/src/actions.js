@@ -1,8 +1,11 @@
-export function addTodo(todo) {
+export function addTodo(todo,important) {
     // console.log('addTodo action maker has been triggered ', todo);
     return {
         type: "ADD_TODO",
-        payload: todo
+        payload: {
+            todo : todo,
+            important : important
+        }
     }
 }
 
@@ -27,3 +30,12 @@ export function tag(todo, trigger) {
     }
 }
 
+export function star(todo) {
+    // console.log('star has been triggered');
+    // console.log('todo: ', todo);
+
+    return {
+        type: "STAR",
+        payload: todo
+    }
+}

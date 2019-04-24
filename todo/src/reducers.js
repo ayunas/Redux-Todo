@@ -1,5 +1,5 @@
 const initialState = {
-    todos : []
+    todos : [],
 }
 
 function rootReducer(state = initialState, action) {
@@ -22,12 +22,19 @@ function rootReducer(state = initialState, action) {
 
         case "TAG": 
             console.log('tag trigger value: ', action.payload.trigger);
-            
+
             return {
                 ...state,
                 trigger : !action.payload.trigger
             }
-            
+
+        case "STAR": 
+            console.log('the star action has arrived to the reducer. action.payload = ', action.payload);
+            action.payload.important = !action.payload.important;
+            return {
+                ...state
+            }
+
         default: 
             return state;
     }

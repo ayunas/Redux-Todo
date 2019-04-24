@@ -8,7 +8,8 @@ class AddTodo extends React.Component {
         super(props);
 
         this.state = {
-            todo : ""
+            todo : "",
+            important : false
         }
     }
 
@@ -24,7 +25,7 @@ class AddTodo extends React.Component {
         <input name="add" placeholder="Add Todo..." value={this.state.todo} onChange={this.input}/>
         <button onClick={ (e) => { 
             e.preventDefault();
-            this.props.addTodo(this.state.todo);
+            this.props.addTodo(this.state.todo, this.state.important);
             this.setState({
                 todo : ''
             });
