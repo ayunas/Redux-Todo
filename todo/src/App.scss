@@ -5,12 +5,41 @@ $react-blue: #282c34;
   text-align: center;
 }
 
+figure {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding: 10px;
+  }
+  img {
+    width: 100px;
+    align-self: center;
+    margin: 10px auto;
+  }
+
+  a {
+    margin-top: 20px;
+  }
+}
+
+img {
+  width: 100px;
+  display: inline-block;
+  margin: 10px auto;
+
+}
+
 ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 5px solid black;
+  border: 5px solid $redux-purple;
   padding-left: 0px;
 }
 
@@ -24,6 +53,8 @@ ul {
   background-color: $redux-purple;
   border-radius: 10px;
   color: white;
+  // border: 3px solid black;
+  // margin: 5px;
 
     
     li {
@@ -34,7 +65,8 @@ ul {
 
 form {
   padding: 10px;
-  border: 1px solid red;
+  margin-top: 20px;
+  // border: 1px solid red;
 
 
   input {
