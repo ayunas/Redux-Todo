@@ -2,7 +2,6 @@ const initialState = {
     todos : []
 }
 
-
 function rootReducer(state = initialState, action) {
 
     switch (action.type) {
@@ -17,14 +16,17 @@ function rootReducer(state = initialState, action) {
             console.log("DELETE_TODO FILTER: ", action.payload);
             return {
                 ...state,
-                todos : state.todos.filter( todo => todo !== action.payload )
+                // todos : state.todos.filter( (todo,i) => (todo !== action.payload.todo) )
+                todos : state.todos.filter( (todo,i) => (i !== action.payload.index) )
             }
+
+        case "TAG": 
+            console.log('tag trigger value: ', action.payload.trigger);
+            action.payload.trigger = !action.payload.trigger;
             
         default: 
             return state;
     }
-
-
 }
 
 export default rootReducer;

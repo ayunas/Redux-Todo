@@ -1,17 +1,52 @@
+$redux-purple : #764ABC;
+$react-blue: #282c34;
+
 .App {
   text-align: center;
 }
 
-button {
-  display: inline-block;
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 5px solid black;
+  padding-left: 0px;
 }
 
-li {
-  display: inline-block;
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 5px solid white;
+  font-size: 25px;
+  width: 30%;
+  background-color: $redux-purple;
+  border-radius: 10px;
+  color: white;
+
+    
+    li {
+    display: inline-block;
+    }
+
+}
+
+form {
+  margin: 10px;
+}
+
+input {
+  font-size: 20px;
+  padding: 10px;
+}
+button {
+  margin-left: 10px;
+  padding: 10px;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $redux-purple;
   // min-height: 100vh;
   display: flex;
   flex-direction: column;

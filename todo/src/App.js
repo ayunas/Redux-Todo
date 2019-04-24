@@ -10,8 +10,8 @@ function App() {
         <h1>Todo or Not Todo</h1>
         <h3>Organize Your Life, One Todo at a Time</h3>
       </header>
-      <Todos/>
       <AddTodo/>
+      <Todos/>
     </div>
   );
 }

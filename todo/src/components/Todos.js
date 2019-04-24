@@ -1,18 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {deleteTodo} from '../actions';
+import {deleteTodo, tag} from '../actions';
 
 function Todos(props) {
     // console.log('todos props: ', props.todos);
     return (
         <ul>
             {props.todos.map( (todo, i) => 
-            <div>
-                <li key={i}>{todo}</li>
-                <button id={i} onClick={ () => props.deleteTodo(todo)}>delete</button>
+            <div className='todo'>
+                <li key={i} onClick={ () => props.tag(todo) }>{todo}</li>
+                <button id={i} onClick={ () => props.deleteTodo(todo,i)}>delete</button>
             </div>
             )}
-            
         </ul>
     )
 }
@@ -26,7 +25,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps() {
     return {
-        deleteTodo : deleteTodo
+        deleteTodo : deleteTodo,
+        tag : tag
     }
 }
 
